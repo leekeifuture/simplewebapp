@@ -19,15 +19,31 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 
 @RestController
-@RequestMapping("/api/v1/employees")
+@RequestMapping(value = "/api/v1/employees", produces = "application/json")
+@Api(value = "Employee Management System",
+        description = "Operations pertaining to employee in Employee Management System")
+@ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Success request"),
+        @ApiResponse(code = 400, message = "Bad request"),
+        @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
+        @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
+        @ApiResponse(code = 404, message = "Employee Not found")
+})
 public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping
+    @GetMapping()
+    @ApiOperation(value = "View a list of available employees",
+            response = List.class)
     public ResponseEntity<List<Employee>> getEmployees() {
         List<Employee> employees = employeeService.getAll();
 
@@ -38,6 +54,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{employeeId}")
+    @ApiOperation(value = "View info about specific employee", response = List.class)
     public ResponseEntity<Employee> getEmployeeById(
             @PathVariable("employeeId") Long employeeId
     ) {
@@ -52,7 +69,8 @@ public class EmployeeController {
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping()
+    @ApiOperation(value = "Add new employee", response = List.class)
     public ResponseEntity<Employee> addEmployee(
             @RequestBody @Valid Employee employee
     ) {
@@ -65,6 +83,7 @@ public class EmployeeController {
     }
 
     @PutMapping()
+    @ApiOperation(value = "Edit existing employee", response = List.class)
     public ResponseEntity<Employee> editEmployee(
             @RequestBody @Valid Employee employee
     ) {
@@ -77,6 +96,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{employeeId}")
+    @ApiOperation(value = "Delete existing employee", response = List.class)
     public ResponseEntity<Employee> deleteEmployee(
             @PathVariable("employeeId") Long employeeId
     ) {
