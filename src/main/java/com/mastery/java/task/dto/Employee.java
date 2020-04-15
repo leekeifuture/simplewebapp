@@ -6,25 +6,42 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @ApiModelProperty(notes = "The database generated employee ID")
     private Long employeeId;
 
+    @NotNull(message = "First Name cannot be null")
+    @ApiModelProperty(notes = "Employee first name", example = "John")
     private String firstName;
 
+    @NotNull(message = "Last Name cannot be null")
+    @ApiModelProperty(notes = "Employee last name", example = "Snow")
     private String lastName;
 
+    @NotNull(message = "Department id cannot be null")
+    @ApiModelProperty(notes = "Employee department id", example = "12")
     private Long departmentId;
 
+    @NotNull(message = "Job title cannot be null")
+    @ApiModelProperty(notes = "Employee job title", example = "Software Developer")
     private String jobTitle;
 
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "Gender cannot be null")
+    @ApiModelProperty(notes = "Employee gender", example = "MALE",
+            allowableValues = "MALE, FEMALE")
     private Gender gender;
 
+    @NotNull(message = "Date of birth cannot be null")
+    @ApiModelProperty(notes = "Employee date of birth", example = "14.06.1990")
     private String dateOfBirth;
 
     public Employee() {
