@@ -1,16 +1,29 @@
-# Compiled class file
+### Project files ###
+application.properties
+
+## JS ##
+yarn.lock
+package-lock.json
+node_modules/
+.pnp/
+.pnp.js
+
+### Default ignored files ###
+workspace.xml
+
+### Compiled class file ###
 *.class
 
-# Log file
+### Log file ###
 *.log
 
-# BlueJ files
+### BlueJ files ###
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
+### Mobile Tools for Java (J2ME) ###
 .mtj.tmp/
 
-# Package Files #
+### Package Files ###
 *.jar
 *.war
 *.nar
@@ -19,5 +32,150 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+### Virtual machine crash logs ###
 hs_err_pid*
+
+### Maven wrapper ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.factorypath
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Gradle template ###
+.gradle
+
+### Ignore Gradle GUI config ###
+gradle-app.setting
+
+### Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored) ###
+!gradle-wrapper.jar
+
+### IntelliJ ###
+out/
+
+### VS Code ###
+.vscode/
+
+### mpeltonen/sbt-idea plugin ###
+.idea_modules/
+
+### JIRA plugin ###
+atlassian-ide-plugin.xml
+
+### Crashlytics plugin (for Android Studio and IntelliJ) ###
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+### Eclipse template ###
+*.pydevproject
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+### Eclipse Core ###
+.project
+
+### External tool builders ###
+.externalToolBuilders/
+
+### Locally stored "Eclipse launch configurations" ###
+*.launch
+
+### CDT-specific ###
+.cproject
+
+### JDT-specific (Eclipse Java Development Tools) ###
+.classpath
+
+### PDT-specific ###
+.buildpath
+
+### sbteclipse plugin ###
+.target
+
+### TeXlipse plugin ###
+.texlipse
+
+### Maven template ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+### Web application files ###
+web-app/WEB-INF/classes
+
+### Default HSQL database files for production mode ###
+prodDb.*
+
+### General HSQL database files ###
+*Db.properties
+*Db.script
+
+### Logs ###
+stacktrace.log
+test/reports
+logs/
+
+### Plugin release files ###
+plugin.xml
+
+### Older plugin install locations ###
+plugins
+web-app/plugins
+
+### Other ###
+*#
+*.sw?
+*~
+.#*
+.*.md.html
+.DS_Store
+.recommenders
+build
+code
+MANIFEST.MF
+_site/
+activemq-data
+bin
+build.log
+dump.rdb
+interpolated*.xml
+lib/
+manifest.yml
+overridedb.*
+transaction-logs
+.flattened-pom.xml
+secrets.yml
+.gradletasknamecache
+HELP.md
