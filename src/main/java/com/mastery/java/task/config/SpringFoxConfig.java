@@ -33,11 +33,11 @@ public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "|My REST API|",
-                "|Some custom description of API.|",
-                "|API TOS|",
-                "|Terms of service|",
-                new Contact("|John Doe|", "|www.somesite.com|", "|someemail@company.com|"),
-                "|License of API|", "|API license URL|", Collections.emptyList());
+                "Employee Management System API",
+                "",
+                "V1.0",
+                "",
+                new Contact("", "", ""),
+                "", "", Collections.emptyList());
     }
 }
