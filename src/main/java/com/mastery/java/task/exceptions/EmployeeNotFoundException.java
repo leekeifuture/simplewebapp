@@ -3,6 +3,6 @@ package com.mastery.java.task.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class NotFoundException extends RuntimeException {
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Employee Not Found")
+public class EmployeeNotFoundException extends RuntimeException {
 }
