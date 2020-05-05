@@ -24,7 +24,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-
 @RestController
 @RequestMapping(value = "/api/v1/employees", produces = "application/json")
 @Api(value = "Employee Management System",
