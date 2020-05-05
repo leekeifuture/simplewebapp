@@ -1,7 +1,7 @@
 package com.mastery.java.task.dao;
 
 import com.mastery.java.task.dto.Employee;
-import com.mastery.java.task.exceptions.NotFoundException;
+import com.mastery.java.task.exceptions.EmployeeNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -23,9 +23,9 @@ public class EmployeeDao {
 
         try {
             jdbcTemplate.queryForObject(sqlCheck, new Object[] {employeeId},
-                    new BeanPropertyRowMapper<Employee>(Employee.class));
+                    new BeanPropertyRowMapper<>(Employee.class));
         } catch (DataAccessException e) {
-            throw new NotFoundException();
+            throw new EmployeeNotFoundException();
         }
     }
 
@@ -33,7 +33,7 @@ public class EmployeeDao {
         String sql = "SELECT * FROM employee ORDER BY employee_id ASC";
 
         return jdbcTemplate.query(sql,
-                new BeanPropertyRowMapper<Employee>(Employee.class));
+                new BeanPropertyRowMapper<>(Employee.class));
     }
 
     public Employee getById(Long employeeId) {
@@ -41,9 +41,9 @@ public class EmployeeDao {
 
         try {
             return jdbcTemplate.queryForObject(sql, new Object[] {employeeId},
-                    new BeanPropertyRowMapper<Employee>(Employee.class));
+                    new BeanPropertyRowMapper<>(Employee.class));
         } catch (DataAccessException e) {
-            throw new NotFoundException();
+            throw new EmployeeNotFoundException();
         }
     }
 

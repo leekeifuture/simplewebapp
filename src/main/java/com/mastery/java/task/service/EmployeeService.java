@@ -2,7 +2,7 @@ package com.mastery.java.task.service;
 
 import com.mastery.java.task.dao.EmployeeDao;
 import com.mastery.java.task.dto.Employee;
-import com.mastery.java.task.exceptions.NotFoundException;
+import com.mastery.java.task.exceptions.EmployeeNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class EmployeeService {
 
     public Employee getById(Long employeeId) {
         if (employeeId == null)
-            throw new NotFoundException();
+            throw new EmployeeNotFoundException();
         else
             return employeeDao.getById(employeeId);
     }
